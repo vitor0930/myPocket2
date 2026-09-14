@@ -1,4 +1,5 @@
 # SQL: 
+``` SQL
 CREATE TABLE lancamentos 
 ( 
  id INT PRIMARY KEY AUTO_INCREMENT,  
@@ -25,3 +26,4 @@ CREATE TABLE categorias
 
 ALTER TABLE lancamentos ADD FOREIGN KEY(id_recorrencias) REFERENCES recorrencias (id);
 ALTER TABLE lancamentos ADD FOREIGN KEY(id_categorias) REFERENCES categorias (id);
+```
