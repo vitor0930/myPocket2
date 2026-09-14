@@ -91,7 +91,6 @@ foreach ($recorrencias as $rec) {
     }
 }
 
-// Buscar meses disponíveis para o seletor
 $stmtMeses = $pdo->query("
     SELECT DISTINCT DATE_FORMAT(data, '%Y-%m') as mes 
     FROM lancamentos 
@@ -99,7 +98,6 @@ $stmtMeses = $pdo->query("
 ");
 $mesesDisponiveis = $stmtMeses->fetchAll(PDO::FETCH_COLUMN);
 
-// Garantir que o mês atual exista na lista
 if (!in_array(date('Y-m'), $mesesDisponiveis)) {
     array_unshift($mesesDisponiveis, date('Y-m'));
 }
